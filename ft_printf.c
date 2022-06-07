@@ -6,7 +6,7 @@
 /*   By: vsergio <vsergio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 23:21:09 by vsergio           #+#    #+#             */
-/*   Updated: 2022/06/07 00:30:11 by vsergio          ###   ########.fr       */
+/*   Updated: 2022/06/07 00:31:33 by vsergio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ int ft_printf(const char *options, ...)
 		i++;
 	}
 	va_end(list_arg);
+	//apesar da funcao printf escrever na tela, ela tambem retorna int, como testado na main abaixo.
 	return (printf_result);
 }
 
