@@ -6,7 +6,7 @@
 /*   By: vsergio <vsergio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 10:49:08 by vsergio           #+#    #+#             */
-/*   Updated: 2022/06/08 13:12:46 by vsergio          ###   ########.fr       */
+/*   Updated: 2022/06/08 18:16:20 by vsergio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -22,6 +22,7 @@ int check_string(char char_tocheck, va_list list_arg)
 		int retprefix = ft_putstr("0x");
 		return (retprefix + ft_addresstohex(va_arg(list_arg, unsigned long), base));
 	}
+	// else if (char_tocheck == )
 	return (0);
 }
 	
@@ -43,6 +44,7 @@ int	ft_printf(const char *string, ...)
 		else
 		{
 			printf_return += ft_putchar(string[i]);
+			// i++;
 		}
 		i++;
 	}
@@ -53,9 +55,9 @@ int	ft_printf(const char *string, ...)
 #include <stdio.h>
 int main(void)
 {
-	char *nome = "ola";
-	int ret2 = printf("seja bem vindo: %p", &nome);
-	printf("retorno original: %i\n", ret2);
-	int ret = ft_printf("seu enderecamento: %p e nome %s\n", &nome, nome);
-	printf("retorno fake: %i", ret);
+	char *nome = "rato";
+	int ret_orig = printf("printf orig: %p\n", &nome);
+	printf("retorno original: %i\n", ret_orig);
+	int ret_fake = ft_printf("printf fake: %p\n", &nome);
+	printf("retorno fake: %i", ret_fake);
 }
