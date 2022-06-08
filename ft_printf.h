@@ -6,7 +6,7 @@
 /*   By: vsergio <vsergio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 21:26:12 by vsergio           #+#    #+#             */
-/*   Updated: 2022/06/07 10:48:45 by vsergio          ###   ########.fr       */
+/*   Updated: 2022/06/08 11:14:49 by vsergio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
+
+int ft_addresstohex(unsigned long address, char *hexbase);
+
 int		ft_isalpha(int c);
 
 int		ft_isdigit(int a);
