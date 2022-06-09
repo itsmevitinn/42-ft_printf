@@ -21,8 +21,6 @@ char *ft_printhex(unsigned long address, char *hexbase)
 {
 	int sizehex;
 	char *converted;
-	int i;
-	i = 0;
 	sizehex = size_hex(address);
 	converted = malloc(sizeof(char) * (sizehex + 1));
 	if (address == 0)
