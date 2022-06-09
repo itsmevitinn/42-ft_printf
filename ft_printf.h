@@ -6,7 +6,7 @@
 /*   By: vsergio <vsergio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 21:26:12 by vsergio           #+#    #+#             */
-/*   Updated: 2022/06/08 11:14:49 by vsergio          ###   ########.fr       */
+/*   Updated: 2022/06/09 18:03:06 by vsergio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,13 @@
 # include <unistd.h>
 # include <stdarg.h>
 
+char	*ft_unsigneditoa(unsigned int n);
+
+char	*ft_strmapi(char const *s, char (*ft_toupper)(char c));
+
 int ft_addresstohex(unsigned long address, char *hexbase);
+
+int ft_unsignedtohex(unsigned int address, char *hexbase);
 
 int		ft_isalpha(int c);
 
@@ -41,7 +47,7 @@ int		ft_atoi(const char *str);
 
 char	*ft_strdup(char *s1);
 
-int		ft_toupper(int c);
+char		ft_toupper(char c);
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 
@@ -80,8 +86,6 @@ void	ft_putendl_fd(char *s, int fd);
 char	*ft_itoa(int n);
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
-
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 char	**ft_split(char const *s, char c);
 

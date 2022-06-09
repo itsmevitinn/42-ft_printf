@@ -1,5 +1,6 @@
 #include "ft_printf.h"
-int size_hex(unsigned long address)
+
+int size_unsignedhex(unsigned int address)
 {
 	int len;
 
@@ -16,12 +17,11 @@ int size_hex(unsigned long address)
 	}
 	return (len);
 }
-#include <stdio.h>
-char *print_hex(unsigned long address, char *hexbase)
+char *print_unsignedhex(unsigned int address, char *hexbase)
 {
 	int sizehex;
 	char *converted;
-	sizehex = size_hex(address);
+	sizehex = size_unsignedhex(address);
 	converted = malloc(sizeof(char) * (sizehex + 1));
 	if (address == 0)
 	{
@@ -39,11 +39,12 @@ char *print_hex(unsigned long address, char *hexbase)
 	return (converted);
 }
 #include <stdio.h>
-int ft_addresstohex (unsigned long address, char *hexbase)
+int ft_unsignedtohex (unsigned int address, char *hexbase)
 {
+	printf("address -1: %u\n", address);
 	char *converted;
 	int size_string;
-	converted = print_hex(address, hexbase);
+	converted = print_unsignedhex(address, hexbase);
 	//acrescento +1 pois eu printo uma string e retorno o tamanho da string + 1 do nulo
 	size_string = ft_putstr(converted);
 	return (size_string);

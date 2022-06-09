@@ -6,15 +6,16 @@
 /*   By: vsergio <vsergio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 10:49:08 by vsergio           #+#    #+#             */
-/*   Updated: 2022/06/09 11:22:14 by vsergio          ###   ########.fr       */
+/*   Updated: 2022/06/09 18:45:15 by vsergio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "ft_printf.h"
-#include <stdio.h>
+
 int check_string(char char_tocheck, va_list list_arg)
 {
-	char *base;
-	base = "0123456789abcdef";
+	char *basehex;
+	basehex = "0123456789abcdef";
 	if (char_tocheck == '%')
 		return (ft_putchar('%'));
 	else if (char_tocheck == 'c')
@@ -24,10 +25,19 @@ int check_string(char char_tocheck, va_list list_arg)
 	else if (char_tocheck == 'p')
 	{
 		int retprefix = ft_putstr("0x");
-		return (retprefix + ft_addresstohex(va_arg(list_arg, unsigned long), base));
+		return (retprefix + ft_addresstohex(va_arg(list_arg, unsigned long), basehex));
 	}
-	else if (char_tocheck == 'd')
-		return (ft_putstr(va_arg(list_arg, char *)));
+	else if (char_tocheck == 'd' || char_tocheck == 'i')
+		return (ft_putstr(ft_itoa(va_arg(list_arg, int))));
+	else if (char_tocheck == 'u')
+		return (ft_putstr(ft_unsigneditoa(va_arg(list_arg, unsigned int))));
+	else if (char_tocheck == 'x')
+		return (ft_unsignedtohex(va_arg(list_arg, unsigned int), basehex));
+	else if (char_tocheck == 'X')
+	{
+		char *baseUppercase = ft_strmapi(basehex, ft_toupper);
+		return (ft_unsignedtohex(va_arg(list_arg, unsigned int), baseUppercase));
+	}
 	return (0);
 }
 	
@@ -56,23 +66,10 @@ int	ft_printf(const char *string, ...)
 	return (printf_return);
 }
 
-#include <stdio.h>
-int main(void)
-{
-	int number1;
-	int number2;
-	int number3;
-	int number4;
-	printf("enter number1 value in octal (%%i): ");
-	scanf("%i", &number1);
-	printf("enter number2 value in hexadecimal (%%i): ");
-	scanf("%i", &number2);
-	printf("enter number3 value: in octal (%%d): ");
-	scanf("%d", &number3);
-	printf("enter number4 value: in hexadecimal (%%d): ");
-	scanf("%d", &number4);
-	printf("value of number1(octal) converted to decimal %i:\n ", number1);
-	printf("value of number2(hexadecimal) converted to decimal %i:\n ", number2);
-	printf("value of number3(octal) in decimal %d:\n ", number3);
-	printf("value of number4(hexadecimal) in decimal %d:\n ", number4);
-}
+// #include <stdio.h>
+// int main(void)
+// {
+// 	unsigned int teste = -5;
+// 	int ret = printf("testando: %u\n", teste);
+// 	printf("%i", ret);
+// }

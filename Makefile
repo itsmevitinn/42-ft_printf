@@ -1,4 +1,4 @@
-SRCS	= ft_strlen.c ft_putstr.c ft_putchar.c ft_addresstohex.c
+SRCS	= ft_strlen.c ft_putstr.c ft_putchar.c ft_addresstohex.c ft_itoa.c ft_unsignedtohex.c ft_strmapi.c ft_toupper.c ft_unsigneditoa.c
 
 OBJS	= ${SRCS:.c=.o}
 
