@@ -6,7 +6,7 @@
 /*   By: vsergio <vsergio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 21:26:12 by vsergio           #+#    #+#             */
-/*   Updated: 2022/05/18 11:00:30 by vsergio          ###   ########.fr       */
+/*   Updated: 2022/06/10 15:45:31 by vsergio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+
+int		ft_printf(const char *string, ...);
 
 int		ft_isalpha(int c);
 
