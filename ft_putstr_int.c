@@ -6,7 +6,7 @@
 /*   By: vsergio <vsergio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 16:59:53 by vsergio           #+#    #+#             */
-/*   Updated: 2022/06/10 17:42:40 by vsergio          ###   ########.fr       */
+/*   Updated: 2022/06/10 17:48:17 by vsergio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_putstr_int(char *s)
 	}
 	while (s[i])
 	{
-		ft_putchar(s[i]);
+		ft_putchar_int(s[i]);
 		i++;
 	}
 	return (i);

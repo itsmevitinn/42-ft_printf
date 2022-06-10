@@ -1,7 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_addresstohex.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vsergio <vsergio@student.42.rio>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/10 17:54:51 by vsergio           #+#    #+#             */
+/*   Updated: 2022/06/10 17:57:33 by vsergio          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
-int size_hex(unsigned long address)
+
+int	size_hex(unsigned long address)
 {
-	int len;
+	int	len;
 
 	len = 0;
 	if (address == 0)
@@ -16,10 +29,12 @@ int size_hex(unsigned long address)
 	}
 	return (len);
 }
-char *ft_addresstohex(unsigned long address, char *hexbase)
+
+char	*ft_addresstohex(unsigned long address, char *hexbase)
 {
-	int sizehex;
-	char *converted;
+	int		sizehex;
+	char	*converted;
+
 	sizehex = size_hex(address);
 	converted = malloc(sizeof(char) * (sizehex + 1));
 	if (address == 0)

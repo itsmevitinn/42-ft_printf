@@ -6,7 +6,7 @@
 /*   By: vsergio <vsergio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 21:26:12 by vsergio           #+#    #+#             */
-/*   Updated: 2022/06/10 17:43:05 by vsergio          ###   ########.fr       */
+/*   Updated: 2022/06/10 18:02:42 by vsergio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ int		ft_printf(const char *string, ...);
 
 char	*ft_unsigneditoa(unsigned int n);
 
-char 	*ft_addresstohex(unsigned long address, char *hexbase);
+char	*ft_addresstohex(unsigned long address, char *hexbase);
 
-char 	*ft_unsignedtohex(unsigned int address, char *hexbase);
+char	*ft_unsignedtohex(unsigned int address, char *hexbase);
 
 int		ft_putchar_int(char c);
 

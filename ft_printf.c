@@ -6,14 +6,17 @@
 /*   By: vsergio <vsergio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 10:49:08 by vsergio           #+#    #+#             */
-/*   Updated: 2022/06/10 17:43:18 by vsergio          ###   ########.fr       */
+/*   Updated: 2022/06/10 18:02:12 by vsergio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int check_string(char char_tocheck, va_list list_arg)
+int	check_string(char char_tocheck, va_list list_arg)
 {
+	char	*bhex;
+
+	bhex = "0123456789abcdef";
 	if (char_tocheck == '%')
 		return (ft_putchar_int('%'));
 	else if (char_tocheck == 'c')
@@ -21,25 +24,26 @@ int check_string(char char_tocheck, va_list list_arg)
 	else if (char_tocheck == 's')
 		return (ft_putstr_int(va_arg(list_arg, char *)));
 	else if (char_tocheck == 'p')
-		return (ft_putstr_int("0x") + size_and_print_address(list_arg, "0123456789abcdef"));
+		return (ft_putstr_int("0x") + size_and_print_address(list_arg, bhex));
 	else if (char_tocheck == 'd' || char_tocheck == 'i')
-		return (size_and_print_int(list_arg));	
+		return (size_and_print_int(list_arg));
 	else if (char_tocheck == 'u')
 		return (size_and_print_unsigned(list_arg));
 	else if (char_tocheck == 'x')
-		return (size_and_print_hex(list_arg, "0123456789abcdef"));
+		return (size_and_print_hex(list_arg, bhex));
 	else if (char_tocheck == 'X')
 		return (size_and_print_hex(list_arg, "0123456789ABCDEF"));
 	return (0);
 }
-	
+
 int	ft_printf(const char *string, ...)
 {
-	int printf_return;
-	int i;
+	va_list	list_arg;
+	int		printf_return;
+	int		i;
+
 	i = 0;
 	printf_return = 0;
-	va_list list_arg;
 	va_start (list_arg, string);
 	while (string[i])
 	{
@@ -50,11 +54,10 @@ int	ft_printf(const char *string, ...)
 		}
 		else
 		{
-			printf_return += ft_putchar(string[i]);
+			printf_return += ft_putchar_int(string[i]);
 		}
 		i++;
 	}
 	va_end(list_arg);
 	return (printf_return);
 }
-

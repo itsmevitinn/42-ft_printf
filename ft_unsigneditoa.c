@@ -6,7 +6,7 @@
 /*   By: vsergio <vsergio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 10:02:41 by vsergio           #+#    #+#             */
-/*   Updated: 2022/06/09 18:03:43 by vsergio          ###   ########.fr       */
+/*   Updated: 2022/06/10 18:04:39 by vsergio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ static char	*if_zero(char *str)
 
 char	*ft_unsigneditoa(unsigned int n)
 {
-	char		*str;
 	unsigned int	i;
 	unsigned int	nbr;
+	char			*str;
 
 	nbr = n;
 	i = len(nbr);
