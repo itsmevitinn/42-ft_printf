@@ -6,7 +6,7 @@
 /*   By: vsergio <vsergio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 21:26:12 by vsergio           #+#    #+#             */
-/*   Updated: 2022/06/10 16:46:25 by vsergio          ###   ########.fr       */
+/*   Updated: 2022/06/10 17:43:05 by vsergio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ char 	*ft_addresstohex(unsigned long address, char *hexbase);
 
 char 	*ft_unsignedtohex(unsigned int address, char *hexbase);
 
-int		ft_putchar(char c);
+int		ft_putchar_int(char c);
 
-int		ft_putstr(char *s);
+int		ft_putstr_int(char *s);
 
 int		size_and_print_int(va_list list_arg);
 

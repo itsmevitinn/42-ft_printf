@@ -6,7 +6,7 @@
 /*   By: vsergio <vsergio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 10:49:08 by vsergio           #+#    #+#             */
-/*   Updated: 2022/06/10 16:55:18 by vsergio          ###   ########.fr       */
+/*   Updated: 2022/06/10 17:43:18 by vsergio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 int check_string(char char_tocheck, va_list list_arg)
 {
 	if (char_tocheck == '%')
-		return (ft_putchar('%'));
+		return (ft_putchar_int('%'));
 	else if (char_tocheck == 'c')
-		return (ft_putchar(va_arg(list_arg, int)));
+		return (ft_putchar_int(va_arg(list_arg, int)));
 	else if (char_tocheck == 's')
-		return (ft_putstr(va_arg(list_arg, char *)));
+		return (ft_putstr_int(va_arg(list_arg, char *)));
 	else if (char_tocheck == 'p')
-		return (ft_putstr("0x") + size_and_print_address(list_arg, "0123456789abcdef"));
+		return (ft_putstr_int("0x") + size_and_print_address(list_arg, "0123456789abcdef"));
 	else if (char_tocheck == 'd' || char_tocheck == 'i')
 		return (size_and_print_int(list_arg));	
 	else if (char_tocheck == 'u')
@@ -57,10 +57,4 @@ int	ft_printf(const char *string, ...)
 	va_end(list_arg);
 	return (printf_return);
 }
-#include <stdio.h>
-int main(void)
-{
-	char *oi = "salve";
-	int ret = printf("%p", &oi);
-	printf("%i", ret);
-}
+
