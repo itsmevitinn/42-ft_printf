@@ -1,3 +1,7 @@
+MAKELIBFT = make -C ./libft
+
+CPLIBFT = cp ./libft/libft.a libftprintf.a
+
 SRCS	= ft_strlen.c ft_putstr.c ft_putchar.c ft_addresstohex.c ft_itoa.c ft_unsignedtohex.c ft_strmapi.c ft_toupper.c ft_unsigneditoa.c
 
 OBJS	= ${SRCS:.c=.o}
@@ -10,24 +14,27 @@ RM		= rm -f
 
 CFLAGS	= -Wall -Wextra -Werror
 
-AR_RC 	= ar rc
+AR_RCS 	= ar rcs
 
 .c.o:
 			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 $(NAME):	${OBJS}
-			${AR_RC} ${NAME} ${OBJS} 
+			${MAKELIBFT} && ${CPLIBFT} && ${AR_RCS} ${NAME} ${OBJS}  
+			# ${CPLIBFT} 
+			# ${AR_RCS} ${NAME} 
+			# ${OBJS}
 
 all:		$(NAME)
 
 clean:		
-			${RM} ${OBJS}
+			${RM} ${OBJS} && cd ./libft && make clean
 
 fclean:		clean
-			${RM} ${NAME}
+			${RM} ${NAME} && cd ./libft && make fclean
 
-# test:		all
-# 			gcc ft_printf.c ${NAME} && ./a.out
+test:		all
+			gcc ft_printf.c ${NAME} && ./a.out
 
 re:		fclean all
 

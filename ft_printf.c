@@ -6,7 +6,7 @@
 /*   By: vsergio <vsergio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 10:49:08 by vsergio           #+#    #+#             */
-/*   Updated: 2022/06/09 18:45:15 by vsergio          ###   ########.fr       */
+/*   Updated: 2022/06/10 12:38:06 by vsergio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,10 +66,3 @@ int	ft_printf(const char *string, ...)
 	return (printf_return);
 }
 
-// #include <stdio.h>
-// int main(void)
-// {
-// 	unsigned int teste = -5;
-// 	int ret = printf("testando: %u\n", teste);
-// 	printf("%i", ret);
-// }
