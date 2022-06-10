@@ -21,9 +21,6 @@ AR_RCS 	= ar rcs
 
 $(NAME):	${OBJS}
 			${MAKELIBFT} && ${CPLIBFT} && ${AR_RCS} ${NAME} ${OBJS}  
-			# ${CPLIBFT} 
-			# ${AR_RCS} ${NAME} 
-			# ${OBJS}
 
 all:		$(NAME)
 
@@ -32,9 +29,6 @@ clean:
 
 fclean:		clean
 			${RM} ${NAME} && cd ./libft && make fclean
-
-test:		all
-			gcc ft_printf.c ${NAME} && ./a.out
 
 re:		fclean all
 
