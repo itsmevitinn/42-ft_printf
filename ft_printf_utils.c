@@ -6,7 +6,7 @@
 /*   By: vsergio <vsergio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 16:16:07 by vsergio           #+#    #+#             */
-/*   Updated: 2022/06/13 12:19:53 by vsergio          ###   ########.fr       */
+/*   Updated: 2022/06/13 18:12:30 by vsergio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -37,6 +37,7 @@ int	size_and_print_hex(va_list list_arg, char *basehex, char check)
 {
 	char	*converted;
 	int		sizeconverted;
+
 	if (check == 'x' || check == 'X')
 		converted = ft_unsignedtohex(va_arg(list_arg, unsigned int), basehex);
 	else
