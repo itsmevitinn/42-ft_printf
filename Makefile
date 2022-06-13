@@ -8,7 +8,7 @@ NAME	= libftprintf.a
 
 CPLIBFT = cp ${LIBFT_PATH}/libft.a libftprintf.a
 
-SRCS	= ft_putstr_int.c ft_putchar_int.c ft_addresstohex.c ft_unsignedtohex.c ft_unsigneditoa.c ft_printf.c ft_printf_utils.c
+SRCS	= ft_putstr_int.c ft_putchar_int.c ft_unsignedtohex.c ft_unsigneditoa.c ft_printf.c ft_printf_utils.c
 
 OBJS	= ${SRCS:.c=.o}
 

@@ -6,13 +6,13 @@
 /*   By: vsergio <vsergio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 18:04:53 by vsergio           #+#    #+#             */
-/*   Updated: 2022/06/10 18:06:12 by vsergio          ###   ########.fr       */
+/*   Updated: 2022/06/13 11:18:53 by vsergio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	size_unsignedhex(unsigned int address)
+int	size_unsignedhex(unsigned long address)
 {
 	int	len;
 
@@ -30,7 +30,7 @@ int	size_unsignedhex(unsigned int address)
 	return (len);
 }
 
-char	*ft_unsignedtohex(unsigned int address, char *hexbase)
+char	*ft_unsignedtohex(unsigned long address, char *hexbase)
 {
 	int		sizehex;
 	char	*converted;

@@ -6,7 +6,7 @@
 /*   By: vsergio <vsergio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 10:49:08 by vsergio           #+#    #+#             */
-/*   Updated: 2022/06/10 18:02:12 by vsergio          ###   ########.fr       */
+/*   Updated: 2022/06/13 12:13:44 by vsergio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 int	check_string(char char_tocheck, va_list list_arg)
 {
-	char	*bhex;
-
-	bhex = "0123456789abcdef";
 	if (char_tocheck == '%')
 		return (ft_putchar_int('%'));
 	else if (char_tocheck == 'c')
@@ -24,15 +21,15 @@ int	check_string(char char_tocheck, va_list list_arg)
 	else if (char_tocheck == 's')
 		return (ft_putstr_int(va_arg(list_arg, char *)));
 	else if (char_tocheck == 'p')
-		return (ft_putstr_int("0x") + size_and_print_address(list_arg, bhex));
+		return (ft_putstr_int("0x") + size_and_print_hex(list_arg, "0123456789abcdef", char_tocheck));
 	else if (char_tocheck == 'd' || char_tocheck == 'i')
 		return (size_and_print_int(list_arg));
 	else if (char_tocheck == 'u')
 		return (size_and_print_unsigned(list_arg));
 	else if (char_tocheck == 'x')
-		return (size_and_print_hex(list_arg, bhex));
+		return (size_and_print_hex(list_arg, "0123456789abcdef", char_tocheck));
 	else if (char_tocheck == 'X')
-		return (size_and_print_hex(list_arg, "0123456789ABCDEF"));
+		return (size_and_print_hex(list_arg, "0123456789ABCDEF", char_tocheck));
 	return (0);
 }
 

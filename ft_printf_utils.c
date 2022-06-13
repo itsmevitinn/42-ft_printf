@@ -6,7 +6,7 @@
 /*   By: vsergio <vsergio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 16:16:07 by vsergio           #+#    #+#             */
-/*   Updated: 2022/06/10 18:03:57 by vsergio          ###   ########.fr       */
+/*   Updated: 2022/06/13 12:19:53 by vsergio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -33,23 +33,14 @@ int	size_and_print_unsigned(va_list list_arg)
 	return (sizeconverted);
 }
 
-int	size_and_print_hex(va_list list_arg, char *basehex)
+int	size_and_print_hex(va_list list_arg, char *basehex, char check)
 {
 	char	*converted;
 	int		sizeconverted;
-
-	converted = ft_unsignedtohex(va_arg(list_arg, unsigned int), basehex);
-	sizeconverted = ft_putstr_int(converted);
-	free (converted);
-	return (sizeconverted);
-}
-
-int	size_and_print_address(va_list list_arg, char *basehex)
-{
-	char	*converted;
-	int		sizeconverted;
-
-	converted = ft_addresstohex(va_arg(list_arg, unsigned long), basehex);
+	if (check == 'x' || check == 'X')
+		converted = ft_unsignedtohex(va_arg(list_arg, unsigned int), basehex);
+	else
+		converted = ft_unsignedtohex(va_arg(list_arg, unsigned long), basehex);
 	sizeconverted = ft_putstr_int(converted);
 	free (converted);
 	return (sizeconverted);
