@@ -1,12 +1,16 @@
-MAKELIBFT = make -C ./libft
+LIBFT_PATH = ./libft
 
-CPLIBFT = cp ./libft/libft.a libftprintf.a
+MAKE_IN_DIRECTORY = make -C
+
+MAKELIBFT = ${MAKE_IN_DIRECTORY} ${LIBFT_PATH}
+
+NAME	= libftprintf.a
+
+CPLIBFT = cp ${LIBFT_PATH}/libft.a libftprintf.a
 
 SRCS	= ft_putstr_int.c ft_putchar_int.c ft_addresstohex.c ft_unsignedtohex.c ft_unsigneditoa.c ft_printf.c ft_printf_utils.c
 
 OBJS	= ${SRCS:.c=.o}
-
-NAME	= libftprintf.a
 
 CC		= cc
 
@@ -25,10 +29,12 @@ $(NAME):	${OBJS}
 all:		$(NAME)
 
 clean:		
-			${RM} ${OBJS} && cd ./libft && make clean
+			${RM} ${OBJS}
+			${MAKE_IN_DIRECTORY} ${LIBFT_PATH} clean
 
 fclean:		clean
-			${RM} ${NAME} && cd ./libft && make fclean
+			${RM} ${NAME} 
+			${MAKE_IN_DIRECTORY} ${LIBFT_PATH} fclean
 
 re:		fclean all
 
