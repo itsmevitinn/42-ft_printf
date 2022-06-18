@@ -6,7 +6,7 @@
 /*   By: vsergio <vsergio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 10:49:08 by vsergio           #+#    #+#             */
-/*   Updated: 2022/06/13 18:11:51 by vsergio          ###   ########.fr       */
+/*   Updated: 2022/06/17 23:39:44 by vsergio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ int	check_string(char char_tocheck, va_list list_arg)
 		return (prefix + size_and_print_hex(list_arg, bhex, char_tocheck));
 	}
 	else if (char_tocheck == 'd' || char_tocheck == 'i')
-		return (size_and_print_int(list_arg));
+		return (size_and_print_uint(list_arg, char_tocheck));
 	else if (char_tocheck == 'u')
-		return (size_and_print_unsigned(list_arg));
+		return (size_and_print_uint(list_arg, char_tocheck));
 	else if (char_tocheck == 'x')
 		return (size_and_print_hex(list_arg, bhex, char_tocheck));
 	else if (char_tocheck == 'X')
