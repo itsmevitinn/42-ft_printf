@@ -38,7 +38,7 @@ int	main(void)
 👤 **Vitor Sergio**
 
 - Github: [@itsmevitinn](https://github.com/itsmevitinn)
-- LinkedIn: [@gitsmevitinn](https://linkedin.com/in/itsmevitinn)
+- LinkedIn: [@itsmevitinn](https://linkedin.com/in/itsmevitinn)
 
 ## Show your support
 
