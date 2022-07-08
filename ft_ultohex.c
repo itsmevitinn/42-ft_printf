@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_unsignedtohex.c                                 :+:      :+:    :+:   */
+/*   ft_ultohex.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsergio <vsergio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 18:04:53 by vsergio           #+#    #+#             */
-/*   Updated: 2022/06/13 11:18:53 by vsergio          ###   ########.fr       */
+/*   Updated: 2022/07/08 00:24:18 by vsergio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	size_unsignedhex(unsigned long address)
 	return (len);
 }
 
-char	*ft_unsignedtohex(unsigned long address, char *hexbase)
+char	*ft_ultohex(unsigned long address, char *hexbase)
 {
 	int		sizehex;
 	char	*converted;

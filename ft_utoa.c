@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_unsigneditoa.c                                  :+:      :+:    :+:   */
+/*   ft_utoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsergio <vsergio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 10:02:41 by vsergio           #+#    #+#             */
-/*   Updated: 2022/06/10 18:04:39 by vsergio          ###   ########.fr       */
+/*   Updated: 2022/07/08 00:23:59 by vsergio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static char	*if_zero(char *str)
 	return (str);
 }
 
-char	*ft_unsigneditoa(unsigned int n)
+char	*ft_utoa(unsigned int n)
 {
 	unsigned int	i;
 	unsigned int	nbr;
